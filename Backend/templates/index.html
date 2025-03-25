@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Board to PPT Converter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='logo.png') }}">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="Deckify Logo" class="logo">
+            <h1>Smart Board to Slide Converter</h1>
+            <p>Convert your whiteboard notes into a beautifully formatted PPT!</p>
+        </div>
+    </header>
+
+    <main>
+        <div class="upload-section">
+            <h2>Upload Your Images</h2>
+            <form id="uploadForm" enctype="multipart/form-data">
+                <input type="file" id="fileInput" name="files" multiple accept="image/*" required>
+                <button type="submit">Convert to PPT</button>
+            </form>
+            <div id="progress" class="hidden">
+                <p>Processing your images, please wait...</p>
+            </div>
+            <div id="downloadSection" class="hidden">
+                <p>Your PPT is ready! <a id="downloadLink" href="#" download="converted_ppt.pptx">Download Now</a></p>
+            </div>
+        </div>
+
+        <div class="features">
+            <h2>Features:</h2>
+            <div class="feature-container">
+                <div class="feature">
+                    <h3>🖼️ Image to Text</h3>
+                    <p>Extracts handwritten text accurately.</p>
+                </div>
+                <div class="feature">
+                    <h3>📊 Diagrams Detection</h3>
+                    <p>Identifies and integrates diagrams seamlessly.</p>
+                </div>
+                <div class="feature">
+                    <h3>🎯 PPT Export</h3>
+                    <p>Generates a clean, professional PowerPoint presentation.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2025 Smart Board to Slide Converter | Made with ❤️ by AiVisionaries</p>
+        </div>
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
